@@ -1,0 +1,24 @@
+name: Test Formulae
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  relaycode:
+    runs-on: macos-26
+    timeout-minutes: 15
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@df4b09108a1de9d6f995fe68f302b3f68bd6d2ef # 2026.07.20.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: brew style mindsurf0176-ui/tap/relaycode
+      - run: brew audit --strict --formula mindsurf0176-ui/tap/relaycode
+      - run: brew install mindsurf0176-ui/tap/relaycode
+      - run: brew test mindsurf0176-ui/tap/relaycode
