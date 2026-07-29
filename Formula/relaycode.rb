@@ -1,8 +1,8 @@
 class Relaycode < Formula
   desc "Mobile-first private remote control for local Codex development"
   homepage "https://github.com/mindsurf0176-ui/relaycode"
-  url "https://github.com/mindsurf0176-ui/relaycode/releases/download/v0.1.0/relaycode-v0.1.0.tar.gz"
-  sha256 "d1c5dc631a591311f3df187fbaa8e548fb452a8bb10eb056e12b6c8b95f6b6b7"
+  url "https://github.com/mindsurf0176-ui/relaycode/releases/download/v0.1.1/relaycode-v0.1.1.tar.gz"
+  sha256 "667fa5ce597dd50219ab6a150085a03fb3e73820818001fa95daaa4045d55076"
   license "Apache-2.0"
 
   depends_on :macos
@@ -22,6 +22,6 @@ class Relaycode < Formula
   end
 
   test do
-    assert_match "RelayCode 0.1.0", shell_output("#{bin}/relaycode --version")
+    assert_match "RelayCode 0.1.1", shell_output("#{bin}/relaycode --version")
   end
 end
